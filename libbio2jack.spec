@@ -5,7 +5,7 @@ Version:	0.4
 Release:	2
 License:	GPL v2
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/sourceforge/bio2jack/bio2jack-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
 # Source0-md5:	5716454ab1a5115604af18b5078f99be
 URL:		http://bio2jack.sourceforge.net/
 BuildRequires:	jack-audio-connection-kit-devel
