@@ -2,7 +2,7 @@ Summary:	Library for simple porting of blocked I/O audio applications to Jack
 Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do Jacka
 Name:		libbio2jack
 Version:	0.4
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/sourceforge/bio2jack/bio2jack-%{version}.tar.gz
@@ -60,10 +60,6 @@ rm -rf .libs
 
 %build
 %{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__autoheader}
-#%{__automake}
 %configure
 %{__make} all
 
@@ -74,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -D bio2jack.h $RPM_BUILD_ROOT%{_includedir}/bio2jack.h
+install -D bio2jack-config $RPM_BUILD_ROOT%{_bindir}/bio2jack-config
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -88,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/bio2jack-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*.h
