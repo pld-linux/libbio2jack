@@ -1,3 +1,4 @@
+%bcond_without	static	# don't build static library
 Summary:	Library for simple porting of blocked I/O audio applications to Jack
 Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do Jacka
 Name:		libbio2jack
@@ -8,6 +9,8 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
 # Source0-md5:	fc85546a02af757314be91f0934fcc91
 URL:		http://bio2jack.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -60,8 +63,14 @@ Statyczna biblioteka bio2jack.
 rm -rf .libs
 
 %build
+rm -f missing
 %{__libtoolize}
-%configure
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure \
+	%{!?with_static:--disable-static}
+%{__make} clean
 %{__make} all
 
 %install
@@ -91,6 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/*.h
 
+%if %{with static}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
