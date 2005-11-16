@@ -5,16 +5,17 @@
 Summary:	Library for simple porting of blocked I/O audio applications to Jack
 Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do Jacka
 Name:		libbio2jack
-Version:	0.7
-Release:	3
+Version:	0.8
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
-# Source0-md5:	fc85546a02af757314be91f0934fcc91
+# Source0-md5:	c2765aef4c841f9f9931fe155c6ea5ba
 URL:		http://bio2jack.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel
+BuildRequires:	libsamplerate-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
