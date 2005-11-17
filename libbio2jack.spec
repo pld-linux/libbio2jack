@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-Summary:	Library for simple porting of blocked I/O audio applications to Jack
-Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do Jacka
+Summary:	Library for simple porting of blocked I/O audio applications to JACK
+Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do JACK
 Name:		libbio2jack
 Version:	0.8
 Release:	1
@@ -21,19 +21,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A library for enabling easy porting of blocked I/O (OSS/ALSA)
-applications to the jack sound server. This library allows the person
+applications to the JACK sound server. This library allows the person
 porting the code to simply replace the calls into OSS/ALSA with calls
 into interface functions of this library. The library buffers a small
-amount of audio data and takes care of the rest of the jack
+amount of audio data and takes care of the rest of the JACK
 implementation including the linked list of audio data buffers and the
-jack callback.
+JACK callback.
 
 %description -l pl
 Biblioteka umo¿liwiaj±ca ³atwe portowanie aplikacji z blokuj±cym we/wy
-d¼wiêku (OSS/ALSA) do serwera d¼wiêku jack. Ta biblioteka pozwala
+d¼wiêku (OSS/ALSA) do serwera d¼wiêku JACK. Ta biblioteka pozwala
 osobie portuj±cej kod po prostu zast±piæ wywo³ania OSS/ALSA
 wywo³aniami funkcji interfejsu tej biblioteki. Biblioteka buforuje
-niewielk± ilo¶æ danych d¼wiêkowym i dba o resztê implementacji jack,
+niewielk± ilo¶æ danych d¼wiêkowych i dba o resztê implementacji JACK,
 w³±cznie z powi±zan± list± buforów danych d¼wiêkowych i wywo³aniami
 zwrotnymi.
 
