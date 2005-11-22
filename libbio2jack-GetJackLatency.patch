@@ -1,0 +1,14 @@
+--- bio2jack/bio2jack.c.orig	2005-11-22 09:54:29.000000000 +0100
++++ bio2jack/bio2jack.c	2005-11-22 10:10:15.000000000 +0100
+@@ -2512,6 +2512,11 @@
+   TRACE("finished\n");
+ }
+ 
++long JACK_GetJackLatency(int deviceID)
++{
++  return JACK_GetJackOutputLatency(deviceID);
++}
++
+ /* Get the latency, in frames, of jack */
+ long
+ JACK_GetJackOutputLatency(int deviceID)
