@@ -6,11 +6,12 @@ Summary:	Library for simple porting of blocked I/O audio applications to JACK
 Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do JACK
 Name:		libbio2jack
 Version:	0.8
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
 # Source0-md5:	c2765aef4c841f9f9931fe155c6ea5ba
+Patch0:		%{name}-GetJackLatency.patch
 URL:		http://bio2jack.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -64,6 +65,7 @@ Statyczna biblioteka bio2jack.
 
 %prep
 %setup -q -n bio2jack
+%patch0 -p1
 rm -rf .libs
 
 %build
