@@ -1,14 +1,16 @@
---- bio2jack/bio2jack.c.orig	2005-11-22 09:54:29.000000000 +0100
-+++ bio2jack/bio2jack.c	2005-11-22 10:10:15.000000000 +0100
-@@ -2512,6 +2512,11 @@
-   TRACE("finished\n");
- }
+--- bio2jack/bio2jack.h.orig	2005-11-08 02:24:47.000000000 +0100
++++ bio2jack/bio2jack.h	2005-11-23 14:03:57.376455000 +0100
+@@ -78,10 +78,12 @@
+ long JACK_GetPosition(int deviceID, enum pos_enum position, int type);
+ void JACK_SetPosition(int deviceID, enum pos_enum position, long value);
  
-+long JACK_GetJackLatency(int deviceID)
-+{
-+  return JACK_GetJackOutputLatency(deviceID);
-+}
+-long JACK_GetJackLatency(int deviceID); /* deprectated, you probably want JACK_GetJackOutputLatency */
+ long JACK_GetJackOutputLatency(int deviceID); /* return the output latency in frames */
+ long JACK_GetJackInputLatency(int deviceID); /* return the input latency in frames */
+ 
++static inline __attribute__((deprecated)) /* deprectated, you probably want JACK_GetJackOutputLatency */
++long JACK_GetJackLatency(int deviceID) { return JACK_GetJackOutputLatency(deviceID); }
 +
- /* Get the latency, in frames, of jack */
- long
- JACK_GetJackOutputLatency(int deviceID)
+ int JACK_SetState(int deviceID, enum status_enum state); /* playing, paused, stopped */
+ enum status_enum JACK_GetState(int deviceID);
+ 
