@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library for simple porting of blocked I/O audio applications to JACK
-Summary(pl):	Biblioteka do ³atwego portowania aplikacji z blokuj±cym we/wy d¼wiêku do JACK
+Summary(pl.UTF-8):   Biblioteka do Å‚atwego portowania aplikacji z blokujÄ…cym we/wy dÅºwiÄ™ku do JACK
 Name:		libbio2jack
 Version:	0.8
 Release:	2
@@ -29,18 +29,18 @@ amount of audio data and takes care of the rest of the JACK
 implementation including the linked list of audio data buffers and the
 JACK callback.
 
-%description -l pl
-Biblioteka umo¿liwiaj±ca ³atwe portowanie aplikacji z blokuj±cym we/wy
-d¼wiêku (OSS/ALSA) do serwera d¼wiêku JACK. Ta biblioteka pozwala
-osobie portuj±cej kod po prostu zast±piæ wywo³ania OSS/ALSA
-wywo³aniami funkcji interfejsu tej biblioteki. Biblioteka buforuje
-niewielk± ilo¶æ danych d¼wiêkowych i dba o resztê implementacji JACK,
-w³±cznie z powi±zan± list± buforów danych d¼wiêkowych i wywo³aniami
+%description -l pl.UTF-8
+Biblioteka umoÅ¼liwiajÄ…ca Å‚atwe portowanie aplikacji z blokujÄ…cym we/wy
+dÅºwiÄ™ku (OSS/ALSA) do serwera dÅºwiÄ™ku JACK. Ta biblioteka pozwala
+osobie portujÄ…cej kod po prostu zastÄ…piÄ‡ wywoÅ‚ania OSS/ALSA
+wywoÅ‚aniami funkcji interfejsu tej biblioteki. Biblioteka buforuje
+niewielkÄ… iloÅ›Ä‡ danych dÅºwiÄ™kowych i dba o resztÄ™ implementacji JACK,
+wÅ‚Ä…cznie z powiÄ…zanÄ… listÄ… buforÃ³w danych dÅºwiÄ™kowych i wywoÅ‚aniami
 zwrotnymi.
 
 %package devel
 Summary:	Header files for bio2jack library
-Summary(pl):	Pliki nag³ówkowe biblioteki bio2jack
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki bio2jack
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	jack-audio-connection-kit-devel
@@ -48,19 +48,19 @@ Requires:	jack-audio-connection-kit-devel
 %description devel
 Header files for bio2jack library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki bio2jack.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki bio2jack.
 
 %package static
 Summary:	Static bio2jack library
-Summary(pl):	Statyczna biblioteka bio2jack
+Summary(pl.UTF-8):   Statyczna biblioteka bio2jack
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static bio2jack library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka bio2jack.
 
 %prep
