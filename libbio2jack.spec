@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library for simple porting of blocked I/O audio applications to JACK
-Summary(pl.UTF-8):   Biblioteka do łatwego portowania aplikacji z blokującym we/wy dźwięku do JACK
+Summary(pl.UTF-8):	Biblioteka do łatwego portowania aplikacji z blokującym we/wy dźwięku do JACK
 Name:		libbio2jack
 Version:	0.8
 Release:	2
@@ -40,7 +40,7 @@ zwrotnymi.
 
 %package devel
 Summary:	Header files for bio2jack library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki bio2jack
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki bio2jack
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	jack-audio-connection-kit-devel
@@ -53,7 +53,7 @@ Pliki nagłówkowe biblioteki bio2jack.
 
 %package static
 Summary:	Static bio2jack library
-Summary(pl.UTF-8):   Statyczna biblioteka bio2jack
+Summary(pl.UTF-8):	Statyczna biblioteka bio2jack
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
