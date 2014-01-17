@@ -7,17 +7,19 @@ Summary(pl.UTF-8):	Biblioteka do łatwego portowania aplikacji z blokującym we/
 Name:		libbio2jack
 Version:	0.9
 Release:	2
-License:	GPL v2
+License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
 # Source0-md5:	00b64a99856cb35f1170c97ecb6bc431
 Patch0:		%{name}-GetJackLatency.patch
 URL:		http://bio2jack.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel
-BuildRequires:	libsamplerate-devel
+BuildRequires:	libsamplerate-devel >= 0.0.15
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
+Requires:	libsamplerate >= 0.0.15
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,8 +44,9 @@ zwrotnymi.
 Summary:	Header files for bio2jack library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki bio2jack
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	jack-audio-connection-kit-devel
+Requires:	libsamplerate-devel >= 0.0.15
 
 %description devel
 Header files for bio2jack library.
@@ -55,7 +58,7 @@ Pliki nagłówkowe biblioteki bio2jack.
 Summary:	Static bio2jack library
 Summary(pl.UTF-8):	Statyczna biblioteka bio2jack
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static bio2jack library.
@@ -66,10 +69,9 @@ Statyczna biblioteka bio2jack.
 %prep
 %setup -q -n bio2jack
 %patch0 -p1
-rm -rf .libs
+%{__rm} -r .libs
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -97,18 +99,18 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.0
+%attr(755,root,root) %{_libdir}/libbio2jack.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbio2jack.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/bio2jack-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
+%attr(755,root,root) %{_libdir}/libbio2jack.so
+%{_libdir}/libbio2jack.la
+%{_includedir}/bio2jack.h
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libbio2jack.a
 %endif
