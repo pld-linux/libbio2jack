@@ -68,7 +68,7 @@ Statyczna biblioteka bio2jack.
 
 %prep
 %setup -q -n bio2jack
-%patch0 -p1
+%patch -P0 -p1
 %{__rm} -r .libs
 
 %build
