@@ -6,7 +6,7 @@ Summary:	Library for simple porting of blocked I/O audio applications to JACK
 Summary(pl.UTF-8):	Biblioteka do łatwego portowania aplikacji z blokującym we/wy dźwięku do JACK
 Name:		libbio2jack
 Version:	0.9
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/bio2jack/bio2jack-%{version}.tar.gz
